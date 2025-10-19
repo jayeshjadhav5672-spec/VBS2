@@ -1,0 +1,507 @@
+/* General Styling */
+:root {
+    --primary-blue: #2196F3; /* A vibrant blue for main actions */
+    --dark-blue: #1976D2;
+    --light-blue-gradient-start: #42a5f5; /* For balance card */
+    --light-blue-gradient-end: #2196f3;
+    --background-grey: #f0f2f5; /* Light grey background */
+    --card-background: #ffffff;
+    --text-dark: #333;
+    --text-light: #666;
+    --border-color: #e0e0e0;
+    --shadow-light: 0 2px 4px rgba(0,0,0,0.08);
+    --shadow-medium: 0 4px 10px rgba(0,0,0,0.12);
+    --error-color: #ef5350; /* Red for errors */
+    --success-color: #66bb6a; /* Green for success */
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif; /* Changed to Poppins for a modern, clean look */
+    color: var(--text-dark);
+    line-height: 1.6;
+    background-color: var(--background-grey);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+.main-header {
+    background-color: var(--card-background); /* White header like image 2 */
+    color: var(--text-dark);
+    padding: 15px 0;
+    box-shadow: var(--shadow-light);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.vbs-logo-img {
+    height: 30px; /* Smaller logo in header */
+    margin-right: 10px;
+}
+
+.logo-text {
+    font-size: 1.4em;
+    font-weight: 600;
+    color: var(--primary-blue);
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+}
+
+.main-nav li {
+    margin-left: 25px;
+}
+
+.nav-item {
+    text-decoration: none;
+    color: var(--text-light);
+    font-weight: 500;
+    padding: 5px 0;
+    transition: color 0.3s ease;
+}
+
+.nav-item:hover,
+.nav-item.active {
+    color: var(--primary-blue);
+    border-bottom: 2px solid var(--primary-blue);
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    color: var(--text-dark);
+}
+
+.user-info span {
+    margin-right: 15px;
+}
+
+.btn-logout {
+    background-color: var(--error-color);
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-size: 0.9em;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-logout:hover {
+    background-color: #c62828;
+}
+
+/* Main Content */
+.main-content {
+    flex: 1;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.card {
+    background-color: var(--card-background);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: var(--shadow-medium);
+    width: 100%;
+}
+
+/* Auth Card (Login Page - Image 1) */
+.auth-card {
+    max-width: 400px; /* Matches the narrow card in Image 1 */
+    text-align: center;
+    padding: 40px;
+}
+
+.vbs-logo-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.vbs-logo-img-large {
+    height: 60px; /* Larger logo for login page */
+    margin-bottom: 10px;
+}
+
+.vbs-logo-text {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.8em;
+    font-weight: 700;
+    color: #333; /* Darker text for the logo name */
+}
+
+.auth-card h2 {
+    font-size: 1.8em;
+    color: var(--text-dark);
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.auth-card .subtitle {
+    color: var(--text-light);
+    margin-bottom: 30px;
+    font-size: 0.95em;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="number"] {
+    width: 100%;
+    padding: 12px 18px; /* Slightly more padding for input fields */
+    border: 1px solid var(--border-color);
+    border-radius: 5px; /* Less rounded than previous design to match image */
+    font-size: 1em;
+    font-family: 'Poppins', sans-serif;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="number"]:focus {
+    border-color: var(--primary-blue);
+    box-shadow: 0 0 0 3px rgba(33, 150, 243, 0.2); /* Blue shadow on focus */
+    outline: none;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    width: 100%;
+    margin-top: 10px; /* Space from inputs */
+}
+
+.btn-primary.signin-btn {
+    background-color: #2196F3; /* Primary blue for sign-in */
+    color: white;
+}
+
+.btn-primary.signin-btn:hover {
+    background-color: #1976D2; /* Darker blue */
+    transform: translateY(-1px);
+}
+
+.signup-link {
+    margin-top: 25px;
+    font-size: 0.9em;
+    color: var(--text-light);
+}
+
+.signup-link a {
+    color: var(--primary-blue);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.signup-link a:hover {
+    text-decoration: underline;
+}
+
+.message {
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 4px;
+    font-weight: 500;
+    text-align: center;
+}
+
+.message.error {
+    background-color: rgba(239, 83, 80, 0.1); /* Light red background */
+    color: var(--error-color);
+    border: 1px solid var(--error-color);
+}
+
+.message.success {
+    background-color: rgba(102, 187, 106, 0.1); /* Light green background */
+    color: var(--success-color);
+    border: 1px solid var(--success-color);
+}
+
+/* Dashboard Layout (Image 2) */
+.dashboard-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    width: 100%;
+    max-width: 900px; /* Max width for dashboard content */
+    box-shadow: none; /* Dashboard sections are individual cards */
+    background-color: transparent; /* No background for the layout itself */
+    padding: 0;
+}
+
+.dashboard-layout .card {
+    padding: 25px;
+    box-shadow: var(--shadow-light); /* Lighter shadow for dashboard cards */
+}
+
+/* Welcome Banner */
+.welcome-banner {
+    background-color: var(--card-background); /* White card */
+    text-align: left;
+    font-size: 1.2em;
+    font-weight: 500;
+    color: var(--text-dark);
+}
+
+/* Current Balance Card (Image 2) */
+.balance-card {
+    background: linear-gradient(135deg, var(--light-blue-gradient-start) 0%, var(--light-blue-gradient-end) 100%);
+    color: white;
+    text-align: center;
+    padding: 40px 25px;
+    border-radius: 10px;
+    box-shadow: var(--shadow-medium);
+}
+
+.balance-card .balance-label {
+    font-size: 1em;
+    font-weight: 400;
+    margin-bottom: 10px;
+    opacity: 0.8;
+}
+
+.balance-card .balance-amount {
+    font-size: 3.5em; /* Larger amount */
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.balance-card .balance-currency {
+    font-size: 1em;
+    font-weight: 300;
+    opacity: 0.7;
+}
+
+/* Transaction Input Section */
+.transaction-input-section h3 {
+    font-size: 1.3em;
+    color: var(--text-dark);
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.transaction-input-fields {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    align-items: flex-end;
+    margin-bottom: 20px;
+}
+
+.transaction-input-fields .input-group {
+    flex: 2;
+    margin-bottom: 0;
+}
+
+.transaction-input-fields .action-buttons {
+    flex: 1;
+    display: flex;
+    gap: 10px;
+}
+
+.transaction-input-fields .btn {
+    flex: 1;
+    width: auto;
+    padding: 10px 15px;
+    font-size: 0.9em;
+}
+
+.btn-success {
+    background-color: var(--success-color);
+    color: white;
+}
+
+.btn-success:hover {
+    background-color: #5cb85c;
+}
+
+.btn-danger {
+    background-color: var(--error-color);
+    color: white;
+}
+
+.btn-danger:hover {
+    background-color: #d9534f;
+}
+
+/* Transaction History Section */
+.transaction-history-section h3 {
+    font-size: 1.3em;
+    color: var(--text-dark);
+    margin-bottom: 15px;
+    text-align: left;
+    font-weight: 600;
+}
+
+.transaction-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+.transaction-table th,
+.transaction-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.transaction-table th {
+    background-color: var(--background-grey);
+    font-weight: 600;
+    color: var(--text-light);
+    text-transform: uppercase;
+    font-size: 0.85em;
+}
+
+.transaction-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.transaction-table tbody tr:hover {
+    background-color: #fcfcfc;
+}
+
+.transaction-table .type-deposit { color: var(--success-color); font-weight: 500; }
+.transaction-table .type-withdraw { color: var(--error-color); font-weight: 500; }
+
+
+/* Footer */
+.main-footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: auto;
+    font-size: 0.9em;
+}
+
+.main-footer .coffee-icon {
+    font-size: 1.2em;
+    vertical-align: middle;
+    margin-left: 5px;
+}
+
+/* Utility Classes */
+.hidden {
+    display: none;
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+    .dashboard-layout {
+        grid-template-columns: 1fr 1fr; /* Two columns for larger screens */
+        grid-template-areas:
+            "welcome welcome"
+            "balance balance"
+            "transaction-input transaction-input"
+            "history history"; /* Adjust grid areas as needed */
+    }
+    .welcome-banner { grid-area: welcome; }
+    .balance-card { grid-area: balance; }
+    .transaction-input-section { grid-area: transaction-input; }
+    .transaction-history-section { grid-area: history; }
+}
+
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .main-nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+    .main-nav li {
+        margin: 0;
+    }
+    .user-info {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .user-info span {
+        margin-right: 0;
+    }
+    .auth-card, .card {
+        padding: 30px 20px;
+    }
+    .balance-card {
+        padding: 30px 20px;
+    }
+    .balance-card .balance-amount {
+        font-size: 3em;
+    }
+    .transaction-input-fields {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .transaction-input-fields .input-group {
+        flex: auto;
+    }
+    .transaction-input-fields .action-buttons {
+        flex-direction: row; /* Keep side-by-side if possible */
+        gap: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .vbs-logo-img-large {
+        height: 50px;
+    }
+    .vbs-logo-text {
+        font-size: 1.5em;
+    }
+    .auth-card h2 {
+        font-size: 1.5em;
+    }
+    .btn {
+        padding: 10px 15px;
+        font-size: 0.9em;
+    }
+    .transaction-input-fields .action-buttons {
+        flex-direction: column; /* Stack buttons on very small screens */
+    }
+}

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Banking System</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="main-header">
+        <div class="container header-content">
+            <div class="logo">
+                <img src="logo.png" alt="VBS Logo" class="vbs-logo-img">
+                <span class="logo-text">Virtual Banking</span>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#" class="nav-item active">Dashboard</a></li>
+                    <li><a href="#" class="nav-item">Passbook</a></li>
+                </ul>
+            </nav>
+            <div class="user-info">
+                <span>Welcome, <span id="welcome-username">Guest</span>!</span>
+                <button id="logout-btn" class="btn btn-logout hidden">Logout</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content container">
+        <section id="auth-section" class="card auth-card">
+            <div class="vbs-logo-wrapper">
+                <img src="logo.png" alt="VBS Logo" class="vbs-logo-img-large">
+                <span class="vbs-logo-text">Virtual Banking</span>
+            </div>
+            <h2>Welcome Back</h2>
+            <p class="subtitle">Sign in to your account</p>
+            <form id="login-form">
+                <div class="input-group">
+                    <input type="text" id="username" placeholder="Enter your username" required>
+                </div>
+                <div class="input-group">
+                    <input type="password" id="password" placeholder="Enter your password" required>
+                </div>
+                <button type="submit" class="btn btn-primary signin-btn">Sign In</button>
+                <p id="login-message" class="message error"></p>
+            </form>
+            <p class="signup-link">Don't have an account? <a href="#">Sign up here</a></p>
+        </section>
+
+        <section id="dashboard-section" class="dashboard-layout hidden">
+            <div class="welcome-banner card">
+                <p>Welcome back, <span id="dashboard-username"></span>!</p>
+            </div>
+
+            <div class="balance-card card">
+                <p class="balance-label">Current Balance</p>
+                <p class="balance-amount">$<span id="account-balance">0.00</span></p>
+                <p class="balance-currency">USD</p>
+            </div>
+
+            <div class="transaction-input-section card">
+                <h3>Perform Transaction</h3>
+                <div class="transaction-input-fields">
+                    <div class="input-group">
+                        <input type="number" id="amount" placeholder="Enter amount" min="0.01" step="0.01" required>
+                    </div>
+                    <div class="action-buttons">
+                        <button id="deposit-btn" class="btn btn-success">+ Deposit</button>
+                        <button id="withdraw-btn" class="btn btn-danger">— Withdraw</button>
+                    </div>
+                </div>
+                <p id="transaction-message" class="message"></p>
+            </div>
+
+            <div class="transaction-history-section card">
+                <h3>Transaction History</h3>
+                <table class="transaction-table">
+                    <thead>
+                        <tr>
+                            <th>Type</th>
+                            <th>Amount</th>
+                            <th>Date</th>
+                            <th>Balance After</th>
+                        </tr>
+                    </thead>
+                    <tbody id="transaction-list">
+                        </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <p>&copy; 2023 Virtual Banking System. Inspired by Java OOP. <span class="coffee-icon">&#9749;</span></p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
